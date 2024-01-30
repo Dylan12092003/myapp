@@ -1,0 +1,91 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-title">
+      Bienvenido a GalaSports
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    
+    <ion-toolbar>
+      <ion-title size="large">GalaSports</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <swiper-container
+  [loop]="true"
+  [pagination]="true">
+      <swiper-slide>
+        <h1 class="white-title">Bienvenido a GalaSports</h1>
+        <p class="white-title"> Ventas de los siguientes eventos:</p>
+        <p class="white-p">Partidos de selección Colombia</p>  
+        <p class="white-p">Liga de Baloncesto de Colombia</p>
+          <p class="white-p">Liga Betplay</p>
+          <p class="white-p">Liga Betplay Femenina</p>
+          <p class="white-p">Torneo Betplay</p>
+        
+    </swiper-slide>
+    <swiper-slide>
+      <h1 class="ion-title">Eventos</h1>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Estadio_El_Campin_vac%C3%ADo.jpg" alt="Fútbol" style="width: 400px; height: 200px;">
+          <p class="white-p">Fecha: 24/01/2024</p>
+          <p class="white-p">Hora: 20:00</p>
+          <p class="white-p">Estadio: Estadio Nemesio Camacho "el campin"</p>
+          <p class="white-p"> Evento: Partido de fútbol</p>
+          <p class="white-p"> Equipos: Millonarios vs Junior</p>
+
+
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSukfO8kq4Ugk-uR-ArbSk3JQqviYotaBJD9w&usqp=CAU" alt="Fútbol" style="width: 400px; height: 200px;">
+          <p class="white-p">Fecha: 28/01/2024</p>
+          <p class="white-p">Hora: 18:00</p>
+          <p class="white-p">Estadio: Estadio Metropolitano</p>
+          <p class="white-p"> Evento: Partido de fútbol</p>
+          <p class="white-p">Equipos: Junior vs Nacional</p>
+
+          <img src="" alt="Fútbol" style="width: 400px; height: 200px;">
+          <p class="white-p">Fecha: 01/03/2024</p>
+          <p class="white-p">Hora: 18:00</p>
+          <p class="white-p">Estadio: Estadio XYZ</p>
+          <p class="white-p"> Evento: Partido de </p>
+          <p class="white-p">Equipos: Equipo A vs Equipo B</p>
+
+          <img src="" alt="Fútbol" style="width: 400px; height: 200px;">
+          <p class="white-p">Fecha: 01/03/2024</p>
+          <p class="white-p">Hora: 18:00</p>
+          <p class="white-p">Estadio: Estadio XYZ</p>
+          <p class="white-p"> Evento: Partido de </p>
+          <p class="white-p">Equipos: Equipo A vs Equipo B</p>
+        
+    </swiper-slide>
+    <swiper-slide>
+      <h1 class="white-title">Contacto</h1>       
+      <ion-list>
+        <ion-item button href="https://wa.me/573245888872">
+          <ion-icon class="icon-whatsapp" style="--background: transparent;" slot="start" name="logo-whatsapp"></ion-icon>
+          <ion-label>WhatsApp</ion-label>
+        </ion-item>
+      
+        <ion-item button href="https://www.instagram.com/tu_instagram">
+          <ion-icon class="icon-instagram" style="--background: transparent;" slot="start" name="logo-instagram"></ion-icon>
+          <ion-label>Instagram</ion-label>
+        </ion-item>
+      
+        <ion-item button href="https://www.facebook.com/tu_facebook">
+          <ion-icon class="icon-facebook" style="--background: transparent;" slot="start" name="logo-facebook"></ion-icon>
+          <ion-label>Facebook</ion-label>
+        </ion-item>
+      </ion-list>
+      
+    </swiper-slide>
+    <swiper-slide>
+      <h1 class="white-title">Comprar boletas</h1>
+  
+        <ion-button expand="full" (click)="goToHome()">Ir a Home</ion-button>
+
+    </swiper-slide>
+ 
+   </swiper-container>
+   
+  
+</ion-content>
