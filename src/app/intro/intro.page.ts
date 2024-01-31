@@ -15,4 +15,7 @@ export class IntroPage {
     console.log("Go to home");
     this.router.navigateByUrl('/home', { replaceUrl: true });
   }
+  ionViewDidEnter () {
+    console.log("ya entre y vi la intro")
+  }
 }
