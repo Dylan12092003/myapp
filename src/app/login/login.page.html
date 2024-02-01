@@ -1,21 +1,36 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="ion-text-center ion-text-uppercase">login</ion-title>
+    <ion-title class="ion-text-center ion-text-uppercase">Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <figure class="ion-text-center">
     <ion-avatar class="center-avatar">
-      <img src="https://cdn-icons-png.flaticon.com/512/5087/5087579.png" alt="logo" class="logo" >
+      <img src="https://cdn-icons-png.flaticon.com/512/5087/5087579.png" alt="logo" class="logo">
     </ion-avatar>
   </figure>
-  <form [formGroup]="loginform" (ngsubmit)="login(loginform.value)">
+  <form [formGroup]="loginform" (ngSubmit)="login(loginform.value)">
     <ion-item>
-      <ion-input  label="Email" labelPlacement="floating" placeholder="Email" formControlName="email"></ion-input>
+      <ion-input formControlName="email" label="Email" labelPlacement="floating" placeholder="Email"></ion-input>
     </ion-item>
-    <ion-button type="submit" [disabled]="!loginform.valid"
-    expand="full"
-    >Iniciar Sesión</ion-button>
+    <div *ngFor="let validation of validation_messages.email">
+      <div *ngIf="loginform.get('email')?.hasError(validation.type) && loginform.get('email')?.dirty">
+        {{ validation.message }}
+      </div>
+    </div>
+    <ion-item>
+      <ion-input formControlName="password" label="Password" labelPlacement="floating" placeholder="Password" type="password"></ion-input>
+    </ion-item>
+    <div *ngFor="let validation of validation_messages.password">
+      <div *ngIf="loginform.get('password')?.hasError(validation.type) && loginform.get('password')?.dirty">
+        {{ validation.message }}
+      </div>
+    </div>
+
+    <ion-button type="submit" [disabled]="!loginform.valid" expand="full">Iniciar Sesión</ion-button>
   </form>
+  <div class="validation-message">       
+    {{loginMessage}}
+  </div>
 </ion-content>
