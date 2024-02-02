@@ -1,3 +1,21 @@
-.blue-p {
-  color:white;
+ion-content {
+  --ion-background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  .white-p {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  ion-button {
+    border-radius: 10px;
+    background-color: #3498db; 
+    color: white; 
+    padding: 10px 20px;
+  }
 }

@@ -1,9 +1,28 @@
-.center-avatar {
-    margin: auto;
-}
-
-.validation-message {
-    color: rgb(0, 174, 255);
-    font-size: 12px;
-    margin-top: 5px;
-}
+ion-content {
+    ion-item {
+      margin-bottom: 15px;
+    }
+  
+    form {
+      ion-input {
+        border-radius: 10px; 
+        border: 2px solid #ddd; 
+        margin-bottom: 15px;
+      }
+  
+      ion-button {
+        border-radius: 10px; 
+      }
+    }
+  
+    .validation-message {
+      color: rgb(0, 174, 255);
+      font-size: 12px;
+      margin-top: 5px;
+    }
+  
+    .ion-text-center {
+      margin-top: 15px;
+    }
+  }
+  
