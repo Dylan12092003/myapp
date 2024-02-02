@@ -1,24 +1,30 @@
+.center-avatar {
+  margin: auto;
+}
 
-ion-header {
-    background-color: #3880ff;
-  }
-  
-  .center-avatar {
-    margin: auto; 
-  }
-  
-  .logo {
-    width: 100px; 
-    height: 100px; 
-  }
-  
-  form {
-    ion-item {
-      margin-bottom: 15px; 
-    }
-  }
-  
-  ion-button {
-    margin-top: 20px;
-  }
-  
+.left-avatar-container {
+  float: left;
+  margin-right: 15px;
+}
+
+ion-list {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+
+ion-item {
+  --highlight-background: transparent;
+  margin-bottom: 15px;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+ion-button {
+  margin-top: 15px;
+}
+

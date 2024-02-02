@@ -1,8 +1,20 @@
+import { Injectable } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavController } from '@ionic/angular';
-import { AuthService } from '../services/auth.service';
-import { Storage } from '@ionic/storage-angular';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthService {
+  registerUser(userData: any): Promise<any> {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve({ message: 'Usuario registrado exitosamente.' });
+      }, 1000);
+    });
+  }
+}
 
 @Component({
   selector: 'app-register',
@@ -10,7 +22,7 @@ import { Storage } from '@ionic/storage-angular';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
-  registerForm!: FormGroup;
+  registerForm: FormGroup;
   registerMessage: any;
   validation_messages = {
     'email': [
@@ -42,15 +54,8 @@ export class RegisterPage implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private authservice: AuthService,
-    private storage: Storage,
     private navCtrl: NavController
   ) {
-    this.initForm();
-  }
-
-  async initForm() {
-    // Inicializa el servicio Storage de forma asincrónica
-    await this.storage.create();
 
     this.registerForm = this.formBuilder.group({
       email: new FormControl(
@@ -102,7 +107,7 @@ export class RegisterPage implements OnInit {
 
   register(register_data: any) {
     console.log(register_data);
-    this.authservice.loginUser(register_data).then(res => {
+    this.authservice.registerUser(register_data).then(res => {
       this.registerMessage = res;
       this.navCtrl.navigateForward('/login');
     }).catch(err => {
@@ -110,4 +115,3 @@ export class RegisterPage implements OnInit {
     });
   }
 }
-
