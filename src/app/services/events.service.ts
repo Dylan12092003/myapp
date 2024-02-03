@@ -13,9 +13,17 @@ export class EventsService {
       response => response.json()
     );
   }
+  getcategories() {
+    return fetch(`${this.urlServer}/categories`).then(
+      response => response.json()
+    );
+  }
+  getID () {
+    return fetch(`${this.urlServer}/categories/id`).then(
+      response => response.json()
+    );
+  }
   getLocalEvents(){
     return dataEvents;
   }
-   //Obtener categorias " get hacia /categories "
-  //Obtener 1 categoria " get hacia /categories/:id"
 }
