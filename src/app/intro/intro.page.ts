@@ -13,7 +13,7 @@ export class IntroPage {
 
   goToHome() {
     console.log("Go to home");
-    this.router.navigateByUrl('/home', { replaceUrl: true });
+    this.router.navigateByUrl('menu/home', { replaceUrl: true });
   }
   ionViewDidEnter () {
     console.log("ya entre y vi la intro")

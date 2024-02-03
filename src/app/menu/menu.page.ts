@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MenuController } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.page.html',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private menu: MenuController,
+    private navCtrl: NavController
+  ) { }
 
   ngOnInit() {
   }
 
+  closeMenu(){
+    console.log("cerrar menu")
+    this.menu.close();
+  }
+  logout(){
+    this.navCtrl.navigateRoot("/login")
+  }
 }
