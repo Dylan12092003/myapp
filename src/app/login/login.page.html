@@ -12,7 +12,7 @@
   </figure>
   <form [formGroup]="loginform" (ngSubmit)="login(loginform.value)">
     <ion-item>
-      <ion-input formControlName="email" label="Email" labelPlacement="floating" placeholder="Email"></ion-input>
+      <ion-input formControlName="email" label="Correo Electronico" labelPlacement="floating" placeholder="Correo Electronico"></ion-input>
     </ion-item>
     <div *ngFor="let validation of validation_messages.email">
       <div *ngIf="loginform.get('email')?.hasError(validation.type) && loginform.get('email')?.dirty">
@@ -20,7 +20,7 @@
       </div>
     </div>
     <ion-item>
-      <ion-input formControlName="password" label="Password" labelPlacement="floating" placeholder="Password" type="password"></ion-input>
+      <ion-input formControlName="password" label="Contraseña" labelPlacement="floating" placeholder="Contraseña" type="password"></ion-input>
     </ion-item>
     <div *ngFor="let validation of validation_messages.password">
       <div *ngIf="loginform.get('password')?.hasError(validation.type) && loginform.get('password')?.dirty">
