@@ -10,5 +10,13 @@
   <p class="white-p">
     ¡Bienvenido a GalaSports, tu destino exclusivo para experimentar la emoción del deporte en vivo! Descubre eventos de primer nivel, desde emocionantes partidos de fútbol hasta la intensidad de la Liga de Baloncesto de Colombia. En GalaSports, te acercamos a tus equipos favoritos y te ofrecemos la oportunidad de vivir cada momento deportivo con pasión y estilo.
   </p>
+  <swiper-container
+  [pagination]="true"
+  [slidesPerView]="3"
+  >
+      <swiper-slide *ngFor="let slide of event_list">
+          <img src="{{slide.image}}">
+      </swiper-slide>
+  </swiper-container>
   <ion-button (click)="goToIntro()" class="intro-button">Descubre más</ion-button>
 </ion-content>

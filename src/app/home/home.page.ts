@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Router} from '@angular/router';
+import { EventsService } from '../services/events.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,21 @@ import {Router} from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  
+  event_list: any;
+  constructor(
+    private router: Router,
+    private events: EventsService
+    ) {}
+    ionViewDidEnter(){
+      this.events.getEvents().then(
+        res =>{
+          this.event_list = res;
+          console.log("Eventos desde el servidor",this.event_list)
+        }
+      )
+      console.log("Local Events",this.events.getLocalEvents().events);
+    }
 
-  constructor(private router: Router) {}
   goToIntro(){
     console.log("go to intro");
     this.router.navigateByUrl('/intro');
